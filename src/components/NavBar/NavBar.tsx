@@ -248,7 +248,12 @@ const NavBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Login">
-              <IconButton sx={{ p: 0, color: "black" }}>Login</IconButton>
+              <IconButton sx={{ p: 0, color: "black"}}>Login</IconButton>
+            </Tooltip>
+          </Box>
+          <Box sx={{ flexGrow: 0, margin: '30px', marginLeft: '50px', }}>
+            <Tooltip title="Register">
+              <IconButton sx={{ p: 0, paddingTop: '15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px', color: "black", border: '3px solid #000000;', borderRadius: '15px 15px 15px 15px;'}}>Register</IconButton>
             </Tooltip>
           </Box>
         </Toolbar>
