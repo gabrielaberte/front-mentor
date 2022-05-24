@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from "../../components/assets/image.png";
+
 
 export const BackgroundDiv = styled.div`
   width: 100%;
@@ -13,11 +13,11 @@ export const BackgroundDiv = styled.div`
   }
 
   div {
-    height: 750px;
     justify-content: center;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 20px;
+    align-items: center;
   }
 
   div div {
@@ -39,13 +39,37 @@ export const BackgroundDiv = styled.div`
       color: white;
 
       &:hover {
-        background-color:white;
+        background-color: white;
         color: black;
       }
     }
   }
+
+  @media (max-width: 400px) {
+    flex-direction: column-reverse;
+    display: flex;
+    font-size: 12px !important;
+    width: 100%;
+    justify-content: space-evenly;
+    height: fit-content;
+
+    h1 {
+      display: flex;
+      font-size: 50px;
+    }
+  }
+`;
+
+export const ContainerDiv = styled.div`
+  diplay: flex;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  align-items: center;
   svg {
-    margin-left: 40px;
-    
+    flex-direction: row;
+    padding-left: 40px !important;
+    margin-top: 90px;
   }
 `;
