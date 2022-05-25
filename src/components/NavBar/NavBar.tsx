@@ -12,6 +12,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
+import './StyledNavBar.css';
+
 const pages = ["Features", "Company", "Careers", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -45,9 +47,9 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
+    <AppBar position="static" sx={{ backgroundColor: "white", color: "black", width: '100%' }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar >
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -64,12 +66,12 @@ const NavBar = () => {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -79,7 +81,7 @@ const NavBar = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center"> teste</Typography>
+                <Typography textAlign="center"> Menu</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -246,16 +248,34 @@ const NavBar = () => {
             </Tooltip>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Login">
-              <IconButton sx={{ p: 0, color: "black"}}>Login</IconButton>
-            </Tooltip>
-          </Box>
-          <Box sx={{ flexGrow: 0, margin: '30px', marginLeft: '50px', }}>
-            <Tooltip title="Register">
-              <IconButton sx={{ p: 0, paddingTop: '15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px', color: "black", border: '3px solid #000000;', borderRadius: '15px 15px 15px 15px;'}}>Register</IconButton>
-            </Tooltip>
-          </Box>
+          {window.screen.width > 1000 && (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Login">
+                <IconButton sx={{ p: 0, color: "black" }}>Login</IconButton>
+              </Tooltip>
+            </Box>
+          )}
+
+          {window.screen.width > 1000 && (
+            <Box sx={{ flexGrow: 0, margin: "30px", marginLeft: "50px" }}>
+              <Tooltip title="Register">
+                <IconButton
+                  sx={{
+                    p: 0,
+                    paddingTop: "15px",
+                    paddingBottom: "15px",
+                    paddingLeft: "25px",
+                    paddingRight: "25px",
+                    color: "black",
+                    border: "3px solid #000000;",
+                    borderRadius: "15px 15px 15px 15px;",
+                  }}
+                >
+                  Register
+                </IconButton>
+              </Tooltip>
+            </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
